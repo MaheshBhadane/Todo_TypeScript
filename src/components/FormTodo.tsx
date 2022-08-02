@@ -8,17 +8,16 @@ const FormTodo: React.FC<{onAddTodo: ( text: string) => void}> = (props) => {
 
     const outputText = todoInputRef.current!.value;
 
-    if(outputText.trim().length === 0){
-        //throw error
-        return;
-    }
+    //if(outputText.trim().length === 0){
+    //    return;
+    //}
     props.onAddTodo(outputText);
     };
 
 
     return (
         <form onSubmit={submitHandler}>
-            <label htmlFor="text">Todo Text here</label>
+            <label htmlFor="text">Todo Text here..</label>
             <input type='text' id="text" ref={todoInputRef}/>
             <button> Add </button>
         </form>

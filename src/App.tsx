@@ -1,24 +1,30 @@
 import { useState } from 'react';
 import FormTodo from './components/FormTodo';
 import Todos from './components/Todos';
-import Todo from './models/todo';
-
+ 
 function App() {
   const [todos, setTodos] = useState<Todo[]>([]); 
 
   const addTodoHandler = (todoText:string) => {
-    const newTodo = new Todo(todoText);
-
-    setTodos((prevTodo) => {
-      return prevTodo.concat(newTodo);
-    });
+ 
+    setTodos([...todos,{id:Math.random().toString(),text:todoText}]);
 
   };
+
+  const onRemoveHandler = (todoId:string) => {
+    setTodos((prevTodos) =>{
+      return prevTodos.filter(todo => todo.id !== todoId);
+    });
+  };
+
+  //const onRemoveHandler = (todoId:string) => {
+  //  setTodos(todos.filter((i) => i.text !== todoId));
+  //};
 
   return (
     <div>
       <FormTodo onAddTodo={addTodoHandler}/>
-      <Todos items={todos} />
+      <Todos items={todos} onRemoveTodo={onRemoveHandler} />
     </div>
   );
 }
