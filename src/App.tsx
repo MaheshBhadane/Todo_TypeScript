@@ -17,11 +17,7 @@ function App() {
     });
   };
 
-  //const onRemoveHandler = (todoId:string) => {
-  //  setTodos(todos.filter((i) => i.text !== todoId));
-  //};
-
-  return (
+    return (
     <div>
       <FormTodo onAddTodo={addTodoHandler}/>
       <Todos items={todos} onRemoveTodo={onRemoveHandler} />
