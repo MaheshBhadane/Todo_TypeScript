@@ -16,13 +16,18 @@ const FormTodo: React.FC<{onAddTodo: ( text: string) => void}> = (props) => {
 
 
     return (
+        <>
+        <div className="App">
+         <h1>ToDo App</h1>
         <form onSubmit={submitHandler}>
-            <div className="">
+            <div>
             <label htmlFor="text">Todo Text here..</label>
             <input type='text' id="text" ref={todoInputRef}/>
-            <button> Add </button>
-            </div>
+            </div><br></br>
+            <button> Add Here </button>
         </form>
+        </div>
+        </>
     );
 };
 

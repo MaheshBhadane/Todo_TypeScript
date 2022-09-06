@@ -18,7 +18,7 @@ function App() {
   };
 
     return (
-    <div>
+    <div className="todo-app">
       <FormTodo onAddTodo={addTodoHandler}/>
       <Todos items={todos} onRemoveTodo={onRemoveHandler} />
     </div>
